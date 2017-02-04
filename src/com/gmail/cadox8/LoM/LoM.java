@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class LoM extends JavaPlugin{
 
-    @Getter private LoM instance;
+    @Getter private static LoM instance;
 
     @Getter private Teams teams;
 

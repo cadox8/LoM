@@ -19,8 +19,8 @@ public class Teams {
     }
 
     public Scoreboard board;
-    public Team red;
-    public Team blue;
+    @Getter public Team red;
+    @Getter public Team blue;
 
     @Getter public HashMap<Team, Location> locs = new HashMap<>();
 

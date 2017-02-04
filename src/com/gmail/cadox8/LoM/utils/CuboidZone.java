@@ -8,6 +8,7 @@ import org.bukkit.block.Block;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author Cadiducho base original, Cadox8 some changes
@@ -31,6 +32,10 @@ public class CuboidZone {
 
     public void set(Material material) {
         toArray().forEach(b -> b.setType(material));
+    }
+
+    public void removeBlock(Block block){
+        block.getWorld().getBlockAt(block.getLocation()).setType(Material.AIR);
     }
 
     public boolean contains(Block b) {
@@ -77,6 +82,8 @@ public class CuboidZone {
     }
 
     public void destroy(){
-        //TODO
+        for (int x = 0; x < toArray().size() / 4; x++){
+            removeBlock(toArray().get(new Random().nextInt(toArray().size())));
+        }
     }
 }
