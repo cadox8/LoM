@@ -8,7 +8,6 @@ import org.bukkit.block.Block;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * @author Cadiducho base original, Cadox8 some changes
@@ -79,11 +78,5 @@ public class CuboidZone {
         int maxZ = Math.max(corner1.getZ(), corner2.getZ());
 
         return new Location(world, minX + (maxX - minX) / 2, minY, minZ + (maxZ - minZ) / 2);
-    }
-
-    public void destroy(){
-        for (int x = 0; x < toArray().size() / 4; x++){
-            removeBlock(toArray().get(new Random().nextInt(toArray().size())));
-        }
     }
 }

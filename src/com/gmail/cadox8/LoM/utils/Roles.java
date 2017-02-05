@@ -5,6 +5,6 @@ public enum Roles {
     TANK, MAGE, SLAYER, SUPPORT, ADC;
 
     public enum Lines{
-        MID, TOP, BOTH, JUNGLE, AFK /*Just for fun*/
+        MID, TOP, BOT, JUNGLE, AFK /*Just for fun*/
     }
 }

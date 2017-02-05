@@ -6,6 +6,8 @@ import lombok.Setter;
 import org.bukkit.Location;
 import org.bukkit.scoreboard.Team;
 
+import java.util.Random;
+
 public class Tower {
 
     @Getter @Setter private TowerType towerType;
@@ -44,6 +46,8 @@ public class Tower {
     }
 
     public void destroy(){
-        area.destroy();
+        for (int x = 0; x < area.toArray().size() / 4; x++){
+            area.removeBlock(area.toArray().get(new Random().nextInt(area.toArray().size())));
+        }
     }
 }
