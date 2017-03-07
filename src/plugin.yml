@@ -1,0 +1,4 @@
+name: ${project.artifactId}
+main: com.gmail.cadox8.LoM.LoM
+version: ${project.version}
+author: cadox8

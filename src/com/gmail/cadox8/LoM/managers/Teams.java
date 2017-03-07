@@ -34,6 +34,9 @@ public class Teams {
         red.setPrefix("§c");
         blue.setPrefix("§3");
 
+        red.setDisplayName("Red");
+        blue.setDisplayName("Blue");
+
         red.setAllowFriendlyFire(false);
         blue.setAllowFriendlyFire(false);
     }
