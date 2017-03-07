@@ -36,12 +36,6 @@
             <artifactId>spigot-api</artifactId>
             <version>1.11-R0.1-SNAPSHOT</version>
         </dependency>
-        <!--Bukkit Repo-->
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot</artifactId>
-            <version>1.11-R0.1-SNAPSHOT</version>
-        </dependency>
         <!--Lombok Repo-->
         <dependency>
             <groupId>org.projectlombok</groupId>
