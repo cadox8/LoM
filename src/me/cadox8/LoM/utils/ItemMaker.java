@@ -29,7 +29,7 @@ public class ItemMaker {
 
     public ItemMaker setDisplayName(String displayName) {
         ItemMeta itemMeta = this.itemStack.getItemMeta();
-        itemMeta.setDisplayName(displayName);
+        itemMeta.setDisplayName(Utils.colorize(displayName));
         this.itemStack.setItemMeta(itemMeta);
         return this;
     }

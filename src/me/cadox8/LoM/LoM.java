@@ -28,4 +28,8 @@ public class LoM extends JavaPlugin{
         arenaManager = new ArenaManager(this);
         gameManager = new GameManager(this);
     }
+
+    public void onDisable(){
+        getServer().getScheduler().cancelTasks(instance);
+    }
 }

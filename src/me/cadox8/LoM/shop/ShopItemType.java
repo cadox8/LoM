@@ -19,9 +19,9 @@ public enum ShopItemType {
     @Getter private ItemStack itemStack;
 
     public String getEffect(){
-        return this.name();
+        return this.toString();
     }
     public String getName(){
-        return this.name().toString();
+        return this.toString();
     }
 }

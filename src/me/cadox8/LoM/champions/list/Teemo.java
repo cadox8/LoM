@@ -3,18 +3,17 @@ package me.cadox8.LoM.champions.list;
 import me.cadox8.LoM.champions.Champion;
 import me.cadox8.LoM.champions.ChampionStats;
 import me.cadox8.LoM.skills.Skill;
-import me.cadox8.LoM.skills.champs.morgana.DarkBinding;
-import me.cadox8.LoM.skills.pasives.SoulSiphon;
+import me.cadox8.LoM.skills.pasives.GuerrillaWarfare;
 import me.cadox8.LoM.utils.Roles;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Morgana extends Champion {
+public class Teemo extends Champion {
 
-    public Morgana(){
-        super(0, "Morgana", Arrays.asList(Roles.MAGE, Roles.SUPPORT));
+    public Teemo(){
+        super(1, "Teemo", Arrays.asList(Roles.MAGE, Roles.SUPPORT, Roles.ADC));
 
         //Champion Stats
         ChampionStats cs = new ChampionStats();
@@ -28,8 +27,7 @@ public class Morgana extends Champion {
     public List<Skill> championSkills(){
         List<Skill> skills = new ArrayList<>();
 
-        skills.add(new SoulSiphon()); //Pasive
-        skills.add(new DarkBinding());
+        skills.add(new GuerrillaWarfare()); //Pasive
 
         return skills;
     }

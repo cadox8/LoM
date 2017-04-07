@@ -16,4 +16,6 @@ public class ChampionStats{
     @Getter @Setter private double ap;
     @Getter @Setter private double ad;
 
+    @Getter @Setter private double healthRegen;
+    @Getter @Setter private double manaRegen;
 }

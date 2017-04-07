@@ -69,7 +69,7 @@ public class Utils {
 
     public static boolean canAttackPlayer(Location l, TeamData team){
         for (Entity e : l.getWorld().getNearbyEntities(l, 0, 0, 0)){
-            if (e instanceof Player && LoM.getInstance().getTeams().getTeam((Player)e) != team.getTeam()){
+            if (e instanceof Player && !LoM.getInstance().getTeams().getTeam((Player)e).equals(team.getTeam())){
                 return true;
             }
         }
@@ -78,7 +78,7 @@ public class Utils {
 
     public static boolean canAttackBlueMinion(Location l, TeamData team){
         for (Entity e : l.getWorld().getNearbyEntities(l, 0, 0, 0)){
-            if (e instanceof Zombie && team.getTeam() != LoM.getInstance().getTeams().getBlue()){
+            if (e instanceof Zombie && !team.getTeam().equals(LoM.getInstance().getTeams().getBlue())){
                 return true;
             }
         }
@@ -87,7 +87,7 @@ public class Utils {
 
     public static boolean canAttackRedMinion(Location l, TeamData team){
         for (Entity e : l.getWorld().getNearbyEntities(l, 0, 0, 0)){
-            if (e instanceof PigZombie && team.getTeam() != LoM.getInstance().getTeams().getRed()){
+            if (e instanceof PigZombie && !team.getTeam().equals(LoM.getInstance().getTeams().getRed())){
                 return true;
             }
         }

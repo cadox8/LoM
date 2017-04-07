@@ -1,4 +1,4 @@
-package me.cadox8.LoM.skills.morgana;
+package me.cadox8.LoM.skills.champs.morgana;
 
 import me.cadox8.LoM.skills.Skill;
 import me.cadox8.LoM.utils.ItemMaker;
@@ -6,8 +6,8 @@ import org.bukkit.Material;
 
 public class DarkBinding extends Skill {
 
-    public DarkBinding(int id){
-        super(id, "Dark Binding", new ItemMaker(Material.ENCHANTED_BOOK).setDisplayName("Dark Binding").build());
+    public DarkBinding(){
+        super("Dark Binding", new ItemMaker(Material.ENCHANTED_BOOK).setDisplayName("Dark Binding").build());
 
         setLevel(0);
 

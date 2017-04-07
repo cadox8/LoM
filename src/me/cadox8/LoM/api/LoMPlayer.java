@@ -1,11 +1,13 @@
-package me.cadox8.LoM;
+package me.cadox8.LoM.api;
 
+import me.cadox8.LoM.LoM;
 import me.cadox8.LoM.utils.ReflectionUtils;
 import me.cadox8.LoM.utils.TeamData;
 import me.cadox8.LoM.utils.Title;
 import me.cadox8.LoM.utils.Utils;
 import lombok.Getter;
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Team;
 
@@ -20,6 +22,9 @@ public class LoMPlayer {
 
     @Getter private UUID uuid;
 
+    public LoMPlayer(OfflinePlayer p){
+        this(p.getUniqueId());
+    }
     public LoMPlayer(UUID uuid){
         this.uuid = uuid;
     }

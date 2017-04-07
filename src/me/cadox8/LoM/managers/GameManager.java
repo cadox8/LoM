@@ -1,7 +1,7 @@
 package me.cadox8.LoM.managers;
 
 import me.cadox8.LoM.LoM;
-import me.cadox8.LoM.LoMPlayer;
+import me.cadox8.LoM.api.LoMPlayer;
 import me.cadox8.LoM.champions.Champion;
 import me.cadox8.LoM.utils.TeamData;
 import lombok.Getter;
@@ -13,8 +13,8 @@ public class GameManager {
 
     private LoM plugin;
 
-    @Getter public HashMap<LoMPlayer, Champion> champions = new HashMap<>();
-    @Getter public ArrayList<LoMPlayer> playersInGame = new ArrayList<>();
+    @Getter private HashMap<LoMPlayer, Champion> champions = new HashMap<>();
+    @Getter private ArrayList<LoMPlayer> playersInGame = new ArrayList<>();
 
     public GameManager(LoM Main){
         this.plugin = Main;

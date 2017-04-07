@@ -2,6 +2,9 @@ package me.cadox8.LoM.skills;
 
 import lombok.Getter;
 import lombok.Setter;
+import me.cadox8.LoM.LoM;
+import me.cadox8.LoM.api.LoMPlayer;
+import me.cadox8.LoM.champions.Champion;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -9,7 +12,8 @@ import java.util.List;
 
 public class Skill {
 
-    @Getter @Setter private int id;
+    protected LoM plugin = LoM.getInstance();
+
     @Getter @Setter private String name;
     @Getter @Setter private ItemStack item;
 
@@ -21,8 +25,7 @@ public class Skill {
     @Getter private double range;
     @Getter @Setter private double time;
 
-    public Skill(int id, String name, ItemStack item){
-        this.id = id;
+    public Skill(String name, ItemStack item){
         this.name = name;
         this.item = item;
     }
@@ -35,9 +38,10 @@ public class Skill {
         return true;
     }
 
-    private void use(){
-
-    }
+    protected void use(){}
+    protected void use(LoMPlayer p){}
+    protected void use(Champion c){}
+    protected void use(Champion c, double value){}
 
 
 
@@ -61,5 +65,10 @@ public class Skill {
     public void setRange(double d){
         d = d / 25; //LoL -> Minecraft
         this.range = d;
+    }
+
+    private double isNull(List<Double> list, int index){
+        if (list.get(index) == null) return 0;
+        return list.get(index);
     }
 }

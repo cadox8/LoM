@@ -12,8 +12,8 @@ public class ArenaManager {
 
     private LoM plugin;
 
-    @Getter public HashMap<Tower, Location> towers = new HashMap<>();
-    @Getter public HashMap<Team, Location> teamLocs = new HashMap<>();
+    @Getter private HashMap<Tower, Location> towers = new HashMap<>();
+    @Getter private HashMap<Team, Location> teamLocs = new HashMap<>(); //0 -> Red / 1 -> Blue
 
     public ArenaManager(LoM Main){
         this.plugin = Main;

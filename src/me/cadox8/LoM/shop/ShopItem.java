@@ -99,7 +99,7 @@ public class ShopItem extends ItemStack{
         }else{
             int partprice = price;
             for(ShopItem item : parts){
-                if(player.getInventory().contains((ItemStack) item)){
+                if(player.getInventory().contains(item)){
                     partprice = partprice - item.getPrice(player);
                 }
             }

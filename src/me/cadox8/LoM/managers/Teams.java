@@ -2,6 +2,7 @@ package me.cadox8.LoM.managers;
 
 import me.cadox8.LoM.LoM;
 import lombok.Getter;
+import me.cadox8.LoM.api.LoMPlayer;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
@@ -19,8 +20,8 @@ public class Teams {
     }
 
     public Scoreboard board;
-    @Getter public Team red;
-    @Getter public Team blue;
+    @Getter private Team red;
+    @Getter private Team blue;
 
     @Getter public HashMap<Team, Location> locs = new HashMap<>();
 
@@ -39,6 +40,10 @@ public class Teams {
 
         red.setAllowFriendlyFire(false);
         blue.setAllowFriendlyFire(false);
+    }
+
+    public Team getTeam(LoMPlayer p){
+        return getTeam(p.getPlayer());
     }
 
     public Team getTeam(Player p){
