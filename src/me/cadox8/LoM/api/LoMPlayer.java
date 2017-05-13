@@ -1,12 +1,10 @@
 package me.cadox8.LoM.api;
 
 import me.cadox8.LoM.LoM;
-import me.cadox8.LoM.utils.ReflectionUtils;
-import me.cadox8.LoM.utils.TeamData;
-import me.cadox8.LoM.utils.Title;
-import me.cadox8.LoM.utils.Utils;
+import me.cadox8.LoM.utils.*;
 import lombok.Getter;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Team;
@@ -42,6 +40,11 @@ public class LoMPlayer {
             return;
         }
         getPlayer().setWalkSpeed(0);
+    }
+
+    public void addToGame(){
+        getPlayer().getInventory().setItem(4, new ItemMaker(Material.NETHER_STAR).setDisplayName("&cChampion Selector").build());
+        plugin.getGameManager().addPlayer(this);
     }
 
 

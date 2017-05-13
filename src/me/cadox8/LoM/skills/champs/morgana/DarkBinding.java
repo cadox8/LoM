@@ -1,5 +1,6 @@
 package me.cadox8.LoM.skills.champs.morgana;
 
+import me.cadox8.LoM.api.LoMPlayer;
 import me.cadox8.LoM.skills.Skill;
 import me.cadox8.LoM.utils.ItemMaker;
 import org.bukkit.Material;
@@ -17,7 +18,7 @@ public class DarkBinding extends Skill {
         setRange(1175);
     }
 
-    public void use(){
+    public void use(LoMPlayer p){
         for (double x = 0.0; x < getRange(); x += 0.5){
             //TODO: Particles
 
