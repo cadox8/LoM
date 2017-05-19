@@ -1,6 +1,7 @@
 package me.cadox8.LoM.task;
 
 import me.cadox8.LoM.LoM;
+import me.cadox8.LoM.states.State;
 import me.cadox8.LoM.utils.Utils;
 import org.bukkit.Sound;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -46,6 +47,7 @@ public class LobbyTask extends BukkitRunnable{
                     Utils.sound(Sound.ENTITY_GENERIC_EXPLODE);
                 });
                 new GameTask(plugin).runTaskTimer(plugin, 0, 20);
+                plugin.getState().setState(State.States.GAME);
 
                 cancel();
                 break;

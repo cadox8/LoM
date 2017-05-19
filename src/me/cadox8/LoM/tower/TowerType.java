@@ -3,8 +3,11 @@ package me.cadox8.LoM.tower;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.Arrays;
+import java.util.List;
+
 @AllArgsConstructor
-public enum TowerType {
+public enum TowerType { //ToDo: Must be like this in config
 
     NEXUS_TOP("nexus_top", 3300, 150, 40, 40, 4.0, 5),
     NEXUS_BOT("nexus_bot", 3300, 150, 40, 40, 4.0, 5),
@@ -28,4 +31,8 @@ public enum TowerType {
     @Getter private int mr;
     @Getter private double attackSpeed;
     @Getter private int regeneration;
+
+    public static List<TowerType> getList(){
+        return Arrays.asList(TowerType.values());
+    }
 }

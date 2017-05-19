@@ -43,6 +43,8 @@ public class Champion {
     }
 
     public void back(LoMPlayer p){
-        new BackTask(LoM.getInstance(), p);
+        int count = 7;
+        if (plugin.getGameManager().getHasBaron().contains(p)) count = 5;
+        new BackTask(LoM.getInstance(), p, count);
     }
 }

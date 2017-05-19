@@ -25,7 +25,7 @@ public class GameTask extends BukkitRunnable {
 
         switch (count){
             case 1:
-                plugin.getArenaManager().getTowers().keySet().forEach(t -> {
+                plugin.getArenaManager().getTowers().forEach(t -> {
                     t.loadAnimation();
                     t.setEnabled(true);
                 });
@@ -40,5 +40,8 @@ public class GameTask extends BukkitRunnable {
 
                 break;
         }
+
+        //ToDo: Check if Nexus is broken
+        //plugin.getState().setState(State.States.FINISHED);
     }
 }

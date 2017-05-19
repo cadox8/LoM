@@ -14,11 +14,16 @@ public class GameManager {
 
     private LoM plugin;
 
-    @Getter private HashMap<LoMPlayer, Champion> champions = new HashMap<>();
-    @Getter private ArrayList<LoMPlayer> playersInGame = new ArrayList<>();
+    @Getter private HashMap<LoMPlayer, Champion> champions;
+    @Getter private ArrayList<LoMPlayer> playersInGame;
+    @Getter private ArrayList<LoMPlayer> hasBaron;
 
-    public GameManager(LoM Main){
-        this.plugin = Main;
+    public GameManager(LoM instance){
+        this.plugin = instance;
+
+        champions = new HashMap<>();
+        playersInGame = new ArrayList<>();
+        hasBaron = new ArrayList<>();
     }
 
     public void addPlayer(LoMPlayer p){
