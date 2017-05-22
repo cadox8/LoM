@@ -44,6 +44,7 @@ public class Nexus {
     }
 
     public void regen(){
+        if (isDestroyed() || !isEnabled()) return;
         if (getHealth() == 5500) return;
         if (getHealth() + 25 >= 5500) {
             setHealth(5500);

@@ -28,6 +28,14 @@ public class GameTask extends BukkitRunnable {
 
         switch (count){
             case 1:
+                plugin.getArenaManager().getNexus().forEach(n -> {
+                    n.loadAnimation();
+                    n.setEnabled(true);
+                });
+                plugin.getArenaManager().getInhibs().forEach(i -> {
+                    i.loadAnimation();
+                    i.setEnabled(true);
+                });
                 plugin.getArenaManager().getTowers().forEach(t -> {
                     t.loadAnimation();
                     t.setEnabled(true);

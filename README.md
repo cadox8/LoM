@@ -5,8 +5,8 @@
 A Minecraft gamemode based on League of Legends
 ## What is that?
 
-I, like a lot of people, play League of Legends (LoL) and I wanted to recreate it on Minecraft.
-I saw [@Elicis](https://github.com/Elicis) has started the game, so I took parts of his code (exactly the shop). You can see his/her project [here](https://github.com/Elicis/LoM).
+I, like a lot of people, play League of Legends (LoL) and I wanted to recreate it on Minecraft.<br>
+I saw [@Elicis](https://github.com/Elicis) has started the game, so I took parts of his code (exactly the shop). You can see his/her project [here](https://github.com/Elicis/LoM).<br>
 I also took some ideas from [@Cadiducho](https://github.com/cadiducho) to make the code more clear, efficient and beauty :purple_heart:, so thank you.
 
 ## Documentation
