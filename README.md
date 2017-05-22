@@ -1,12 +1,13 @@
 # LoM (League of Minecraft)
-========================================<br>
-[![Release](https://img.shields.io/badge/release-0.0.7--SNAPSHOT-yellowgreen.svg)](https://github.com/cadox8/LoM/commits/master) [![Build Status](https://travis-ci.org/cadox8/LoM.svg?branch=master)](https://travis-ci.org/cadox8/LoM) [Maven](https://projectalpha.es/repo/me/cadox8/LoM/)<br><br>
+
+[![Release](https://img.shields.io/badge/release-0.0.7--SNAPSHOT-yellowgreen.svg)](https://github.com/cadox8/LoM/commits/master) [![Build Status](https://travis-ci.org/cadox8/LoM.svg?branch=master)](https://travis-ci.org/cadox8/LoM) [Maven](https://projectalpha.es/repo/me/cadox8/LoM/)
+
 A Minecraft gamemode based on League of Legends
 ## What is that?
 
-I, like a lot of people, play League of Legends (LoL) and I wanted to recreate it on Minecraft.<br>
-I saw that @Elicis has started the game, so I took parts of his code (exactly the shop). You can see his project [here](https://github.com/Elicis/LoM).<br>
-I also took some ideas from @Cadiducho to make the code more clear, efficient and beauty :purple_heart:, so thank you.
+I, like a lot of people, play League of Legends (LoL) and I wanted to recreate it on Minecraft.
+I saw [@Elicis](https://github.com/Elicis) has started the game, so I took parts of his code (exactly the shop). You can see his/her project [here](https://github.com/Elicis/LoM).
+I also took some ideas from [@Cadiducho](https://github.com/cadiducho) to make the code more clear, efficient and beauty :purple_heart:, so thank you.
 
 ## Documentation
 
