@@ -1,6 +1,7 @@
 package me.cadox8.LoM.task;
 
 import me.cadox8.LoM.LoM;
+import me.cadox8.LoM.states.State;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class GameTask extends BukkitRunnable {
@@ -23,6 +24,8 @@ public class GameTask extends BukkitRunnable {
     public void run(){
         count++;
 
+        if (count % 5 == 0) plugin.getArenaManager().getNexus().forEach(n -> n.regen());
+
         switch (count){
             case 1:
                 plugin.getArenaManager().getTowers().forEach(t -> {
@@ -41,7 +44,6 @@ public class GameTask extends BukkitRunnable {
                 break;
         }
 
-        //ToDo: Check if Nexus is broken
-        //plugin.getState().setState(State.States.FINISHED);
+        if (plugin.getState().getState() == State.States.FINISHED) cancel();
     }
 }

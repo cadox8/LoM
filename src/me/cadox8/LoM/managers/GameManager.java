@@ -17,6 +17,7 @@ public class GameManager {
     @Getter private HashMap<LoMPlayer, Champion> champions;
     @Getter private ArrayList<LoMPlayer> playersInGame;
     @Getter private ArrayList<LoMPlayer> hasBaron;
+    @Getter private HashMap<LoMPlayer, Integer> money; //ToDo: Change this to another class
 
     public GameManager(LoM instance){
         this.plugin = instance;
@@ -24,11 +25,14 @@ public class GameManager {
         champions = new HashMap<>();
         playersInGame = new ArrayList<>();
         hasBaron = new ArrayList<>();
+        money = new HashMap<>();
     }
 
     public void addPlayer(LoMPlayer p){
         if (!playersInGame.contains(p)) {
             playersInGame.add(p);
+            if (money.containsKey(p)) money.remove(p);
+            money.put(p, 400);
         } else {
             p.sendMessage("&cYou're playing!");
         }

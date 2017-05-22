@@ -1,6 +1,8 @@
 package me.cadox8.LoM.managers;
 
 import me.cadox8.LoM.LoM;
+import me.cadox8.LoM.inhib.Inhib;
+import me.cadox8.LoM.nexus.Nexus;
 import me.cadox8.LoM.tower.Tower;
 import lombok.Getter;
 import me.cadox8.LoM.tower.TowerType;
@@ -19,12 +21,16 @@ public class ArenaManager {
     private LoM plugin;
 
     @Getter private ArrayList<Tower> towers;
+    @Getter private ArrayList<Inhib> inhibs;
+    @Getter private ArrayList<Nexus> nexus;
     @Getter private HashMap<Team, Location> teamLocs;
 
     public ArenaManager(LoM Main){
         this.plugin = Main;
 
         towers = new ArrayList<>();
+        inhibs = new ArrayList<>();
+        nexus = new ArrayList<>();
         teamLocs = new HashMap<>(); //0 -> Red / 1 -> Blue
 
         initArena();

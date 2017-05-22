@@ -1,8 +1,8 @@
 package me.cadox8.LoM.api;
 
+import lombok.Getter;
 import me.cadox8.LoM.LoM;
 import me.cadox8.LoM.utils.*;
-import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;

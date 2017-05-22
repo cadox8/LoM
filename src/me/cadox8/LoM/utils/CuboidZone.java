@@ -42,7 +42,7 @@ public class CuboidZone {
     }
 
     public List<Block> toArray() {
-        List<Block> result = new ArrayList();
+        List<Block> result = new ArrayList<>();
 
         int minX = Math.min(corner1.getX(), corner2.getX());
         int minY = Math.min(corner1.getY(), corner2.getY());
@@ -66,8 +66,7 @@ public class CuboidZone {
         String s = String.valueOf(new StringBuilder(String.valueOf(world.getName())).append(":").append(l.getBlockX()).toString()) + ":" + String.valueOf(l.getBlockY()) + ":" + String.valueOf(l.getBlockZ());
         Location l1 = corner2.getLocation();
         String s1 = String.valueOf(new StringBuilder(String.valueOf(world.getName())).append(":").append(l1.getBlockX()).toString()) + ":" + String.valueOf(l1.getBlockY()) + ":" + String.valueOf(l1.getBlockZ());
-        String result = s + ";" + s1;
-        return result;
+        return s + ";" + s1;
     }
 
     public Location getBottomCenter() {
@@ -78,5 +77,9 @@ public class CuboidZone {
         int maxZ = Math.max(corner1.getZ(), corner2.getZ());
 
         return new Location(world, minX + (maxX - minX) / 2, minY, minZ + (maxZ - minZ) / 2);
+    }
+
+    public void removeAll(){
+        toArray().forEach(b -> removeBlock(b));
     }
 }
