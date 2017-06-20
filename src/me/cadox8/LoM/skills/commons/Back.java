@@ -1,4 +1,4 @@
-package me.cadox8.LoM.skills.utils;
+package me.cadox8.LoM.skills.commons;
 
 import me.cadox8.LoM.api.LoMPlayer;
 import me.cadox8.LoM.skills.Skill;

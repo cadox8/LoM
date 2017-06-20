@@ -24,9 +24,8 @@ public class ChampionManager {
     public void registerChampions(@NonNull Champion... champion) throws RegisteredChampionException {
         for (Champion c : champion){
             champions.forEach(champ -> {
-                if (champ.getId() == c.getId()) {
-                    throw new RegisteredChampionException("Champion with id " + c.getId() + " is already registered");
-                }
+                if (champ.getId() == c.getId()) throw new RegisteredChampionException("Champion with id " + c.getId() + " is already registered");
+                champions.add(c);
             });
         }
     }

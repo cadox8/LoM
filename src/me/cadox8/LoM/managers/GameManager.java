@@ -5,9 +5,11 @@ import me.cadox8.LoM.api.LoMPlayer;
 import me.cadox8.LoM.champions.Champion;
 import me.cadox8.LoM.utils.TeamData;
 import lombok.Getter;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 public class GameManager {
@@ -17,7 +19,7 @@ public class GameManager {
     @Getter private HashMap<LoMPlayer, Champion> champions;
     @Getter private ArrayList<LoMPlayer> playersInGame;
     @Getter private ArrayList<LoMPlayer> hasBaron;
-    @Getter private HashMap<LoMPlayer, Integer> money; //ToDo: Change this to another class
+        @Getter private HashMap<LoMPlayer, Integer> money; //ToDo: Change this to another class
 
     public GameManager(LoM instance){
         this.plugin = instance;
@@ -36,6 +38,12 @@ public class GameManager {
         } else {
             p.sendMessage("&cYou're playing!");
         }
+    }
+
+    public void quitPlayer(LoMPlayer p){
+        if (!playersInGame.contains(p)) return;
+        playersInGame.remove(p);
+        money.remove(p);
     }
 
     public void mixTeams() throws NullPointerException {
@@ -65,5 +73,13 @@ public class GameManager {
             champions.put(p, c);
             p.sendMessage("&bAssigned Champion: " + c.getName());
         }
+    }
+
+    public Player[] playersInGame(){
+        List<Player> players = new ArrayList<>();
+
+        for (LoMPlayer p : getPlayersInGame()) players.add(p.getPlayer());
+
+        return players.toArray(new Player[players.size()]);
     }
 }
