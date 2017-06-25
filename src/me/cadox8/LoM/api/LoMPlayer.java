@@ -43,7 +43,7 @@ public class LoMPlayer {
     }
 
     public void addToGame(){
-        getPlayer().getInventory().setItem(4, new ItemMaker(Material.NETHER_STAR).setDisplayName("&cChampion Selector").build());
+        getPlayer().getInventory().setItem(4, new ItemMaker(Material.NETHER_STAR).setName("&cChampion Selector").build());
         plugin.getGameManager().addPlayer(this);
     }
 

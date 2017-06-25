@@ -11,8 +11,6 @@ public class SoulSiphon extends Pasive {
         super("Soul Siphon", new ItemStack(Material.ACACIA_DOOR));
 
         setSpell_vamp(toList(0.1, 0.15, 0.2));
-
-        setLevel(1);
     }
 
     public void use(Champion c, double damage){

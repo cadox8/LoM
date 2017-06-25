@@ -14,5 +14,7 @@ public class Pasive extends Skill {
 
     public Pasive(String name, ItemStack item){
         super(name, item);
+
+        setLevel(1);
     }
 }

@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import me.cadox8.LoM.LoM;
 import me.cadox8.LoM.api.LoMPlayer;
-import me.cadox8.LoM.champions.Champion;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -12,18 +11,21 @@ import java.util.List;
 
 public class Skill {
 
+    //ToDo: + x%
+
     protected LoM plugin = LoM.getInstance();
 
     @Getter @Setter private String name;
     @Getter @Setter private ItemStack item;
 
-    @Getter @Setter private int level;
+    @Getter @Setter private int level = 0;
 
     @Getter @Setter private List<Double> manaCost;
     @Getter @Setter private List<Double> adDamage;
     @Getter @Setter private List<Double> apDamage;
     @Getter private double range;
     @Getter @Setter private double time;
+    @Getter @Setter private double cooldown;
 
     public Skill(String name, ItemStack item){
         this.name = name;
@@ -40,8 +42,6 @@ public class Skill {
 
     protected void use(){}
     protected void use(LoMPlayer p){}
-    protected void use(Champion c){}
-    protected void use(Champion c, double value){}
 
 
 
@@ -56,9 +56,7 @@ public class Skill {
     public List<Double> toList(double... args){
         List<Double> doubles = new ArrayList<>();
 
-        for (double d : args){
-            doubles.add(d);
-        }
+        for (double d : args) doubles.add(d);
         return doubles;
     }
 

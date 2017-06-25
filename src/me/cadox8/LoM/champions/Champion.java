@@ -18,16 +18,18 @@ public class Champion {
 
     @Getter @Setter private int id;
     @Getter @Setter private String name;
+    @Getter @Setter private String description;
     @Getter @Setter private List<Roles> roles;
     @Getter @Setter private ChampionStats championStats;
 
-    public Champion(int id, String name, Roles role){
-        this(id, name, Arrays.asList(role));
+    public Champion(int id, String name, String description, Roles role){
+        this(id, name, description, Arrays.asList(role));
     }
 
-    public Champion(int id, String name, List<Roles> roles){
+    public Champion(int id, String name, String description, List<Roles> roles){
         this.id = id;
         this.name = name;
+        this.description = description;
         this.roles = roles;
     }
 

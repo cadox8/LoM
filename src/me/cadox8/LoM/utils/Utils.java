@@ -44,6 +44,40 @@ public class Utils {
         return loc;
     }
 
+    public static Location add(double a, Location l) {
+        switch (getFacing(l)) {
+            case 0:
+                l.add(a, 0, 0);
+                break;
+            case 1:
+                l.add(0, 0, a);
+                break;
+            case 2:
+                l.add(-a, 0, 0);
+                break;
+            case 3:
+                l.add(0, 0, -a);
+                break;
+        }
+        return l;
+    }
+
+    public static int getFacing(Player player) {
+        return getFacing(player.getLocation());
+    }
+    //So... not diagonals, TODO!
+    public static int getFacing(Location l) {
+        double d = (l.getYaw() * 4.0F / 360.0F) + 0.5D;
+        int i = (int) d;
+        return d < i ? i - 1 : i;
+        /*
+        * 0 = South
+        * 1 = West
+        * 2 = North
+        * 3 = East
+        * */
+    }
+
     /**
      * TIME
      * */

@@ -14,7 +14,7 @@ import java.util.List;
 public class Morgana extends Champion {
 
     public Morgana(){
-        super(0, "Morgana", Arrays.asList(Roles.MAGE, Roles.SUPPORT));
+        super(0, "Morgana", "Fallen Angel", Arrays.asList(Roles.MAGE, Roles.SUPPORT));
 
         //Champion Stats
         ChampionStats cs = new ChampionStats();

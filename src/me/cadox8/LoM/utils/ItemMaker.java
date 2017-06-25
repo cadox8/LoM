@@ -17,6 +17,10 @@ public class ItemMaker {
         itemStack = new ItemStack(type);
     }
 
+    public ItemMaker(Material type, int data) {
+        itemStack = new ItemStack(type, 1, (short)data);
+    }
+
     public ItemMaker setType(Material type) {
         itemStack.setType(type);
         return this;
@@ -27,7 +31,12 @@ public class ItemMaker {
         return this;
     }
 
-    public ItemMaker setDisplayName(String displayName) {
+    public ItemMaker setData(int data) {
+        this.itemStack.setDurability((short)data);
+        return this;
+    }
+
+    public ItemMaker setName(String displayName) {
         ItemMeta itemMeta = this.itemStack.getItemMeta();
         itemMeta.setDisplayName(Utils.colorize(displayName));
         this.itemStack.setItemMeta(itemMeta);
@@ -74,6 +83,13 @@ public class ItemMaker {
         ItemMeta meta = this.itemStack.getItemMeta();
         meta.spigot().setUnbreakable(true);
         meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        this.itemStack.setItemMeta(meta);
+        return this;
+    }
+
+    public ItemMaker noInfo() {
+        ItemMeta meta = this.itemStack.getItemMeta();
+        meta.addItemFlags(ItemFlag.values());
         this.itemStack.setItemMeta(meta);
         return this;
     }
