@@ -1,6 +1,8 @@
 package me.cadox8.LoM.api;
 
+import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 import me.cadox8.LoM.LoM;
 import me.cadox8.LoM.utils.*;
 import org.bukkit.Location;
@@ -19,19 +21,22 @@ public class LoMPlayer {
     private LoM plugin = LoM.getInstance();
 
     @Getter private UUID uuid;
+    @Getter @Setter private UserData userData;
 
     public LoMPlayer(OfflinePlayer p){
         this(p.getUniqueId());
     }
     public LoMPlayer(UUID uuid){
         this.uuid = uuid;
+
+        setUserData(new UserData());
     }
 
     /**
      * LoMPlayer Class
      **/
     public void sendMessage(String msg){
-        getPlayer().sendMessage(plugin.getPrefix() + Utils.colorize(msg));
+        getPlayer().sendMessage(LoM.getPrefix() + Utils.colorize(msg));
     }
 
     public void paralize(){
@@ -47,6 +52,11 @@ public class LoMPlayer {
         plugin.getGameManager().addPlayer(this);
     }
 
+    public void save() {
+        plugin.getLoMServer().remPlayer(this);
+        plugin.getLoMServer().addPlayer(this);
+    }
+
 
     /**
     * Teams
@@ -54,11 +64,9 @@ public class LoMPlayer {
     public void addTeam(TeamData team){
         plugin.getTeams().addPlayerToTeam(getPlayer(), team.getTeam());
     }
-
     public void removeTeam(TeamData team){
         plugin.getTeams().removePlayerFromTeam(getPlayer(), team.getTeam());
     }
-
     public Team getTeam(){
         return plugin.getTeams().getTeam(getPlayer());
     }
@@ -112,5 +120,16 @@ public class LoMPlayer {
         Title t = new Title(getPlayer(), in, stay, out, title, subtitle);
         t.clearTitle();
         t.sendTitle();
+    }
+
+
+    @Data
+    public class UserData {
+        public boolean canMove = true;
+        public boolean canAttack = true;
+
+        public boolean hasBaron = false;
+
+        public int money = 0;
     }
 }

@@ -1,5 +1,6 @@
 package me.cadox8.LoM;
 
+import me.cadox8.LoM.api.LoMServer;
 import me.cadox8.LoM.champions.ChampionManager;
 import me.cadox8.LoM.managers.ArenaManager;
 import me.cadox8.LoM.managers.GameManager;
@@ -24,6 +25,7 @@ public class LoM extends JavaPlugin{
     @Getter private GameManager gameManager;
     @Getter private ChampionManager championManager;
     @Getter private State state;
+    @Getter private LoMServer loMServer;
 
     public void onEnable(){
         instance = this;
@@ -48,6 +50,7 @@ public class LoM extends JavaPlugin{
             gameManager = new GameManager(instance);
             championManager = new ChampionManager(instance);
             state = new State();
+            loMServer = new LoMServer();
         } catch (Exception e){
             Log.log(Log.Logs.ERROR, "Error while loading classes, disabling...");
             getServer().getPluginManager().disablePlugin(instance);

@@ -13,7 +13,7 @@ import java.util.List;
 public class Teemo extends Champion {
 
     public Teemo(){
-        super(1, "Teemo", Arrays.asList(Roles.MAGE, Roles.SUPPORT, Roles.ADC));
+        super(1, "Teemo", "The Swift Scout", Arrays.asList(Roles.MAGE, Roles.SUPPORT, Roles.ADC));
 
         //Champion Stats
         ChampionStats cs = new ChampionStats();
