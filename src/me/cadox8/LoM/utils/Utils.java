@@ -1,7 +1,7 @@
 package me.cadox8.LoM.utils;
 
-import me.cadox8.LoM.LoM;
 import lombok.NonNull;
+import me.cadox8.LoM.LoM;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -135,5 +135,20 @@ public class Utils {
             }
         }
         return false;
+    }
+
+    public static void giveMoney(TeamData td, int gold) {
+        switch (td){
+            case RED:
+                plugin.getGameManager().getPlayersInGame().forEach(p -> {
+                    if (p.getTeam().equals(TeamData.BLUE.getTeam())) p.getUserData().setMoney(p.getUserData().getMoney() + gold);
+                });
+                break;
+            case BLUE:
+                plugin.getGameManager().getPlayersInGame().forEach(p -> {
+                    if (p.getTeam().equals(TeamData.RED.getTeam())) p.getUserData().setMoney(p.getUserData().getMoney() + gold);
+                });
+                break;
+        }
     }
 }

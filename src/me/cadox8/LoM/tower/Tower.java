@@ -91,21 +91,11 @@ public class Tower {
     public void destroy(){
         setDestroyed(true);
         setEnabled(false);
+
         for (int x = 0; x < area.toArray().size() / 5; x++){
             area.removeBlock(area.toArray().get(new Random().nextInt(area.toArray().size())));
         }
-        switch (getTeamData()){
-            case RED:
-                plugin.getGameManager().getPlayersInGame().forEach(p -> {
-                    if (p.getTeam().equals(TeamData.BLUE.getTeam())) plugin.getGameManager().getMoney().put(p, plugin.getGameManager().getMoney().get(p) + getGold_reward());
-                });
-                break;
-            case BLUE:
-                plugin.getGameManager().getPlayersInGame().forEach(p -> {
-                    if (p.getTeam().equals(TeamData.RED.getTeam())) plugin.getGameManager().getMoney().put(p, plugin.getGameManager().getMoney().get(p) + getGold_reward());
-                });
-                break;
-        }
+        Utils.giveMoney(getTeamData(), getGold_reward());
     }
 
     public void loadAnimation(){

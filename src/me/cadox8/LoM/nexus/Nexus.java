@@ -63,7 +63,8 @@ public class Nexus {
             case RED:
                 plugin.getGameManager().getPlayersInGame().forEach(p -> {
                     if (p.getTeam().equals(TeamData.BLUE.getTeam())) {
-                        plugin.getGameManager().getMoney().put(p, plugin.getGameManager().getMoney().get(p) + getGold_reward());
+                        p.getUserData().setMoney(p.getUserData().getMoney() + getGold_reward());
+                        p.save();
                         p.sendTitle("&3Victory", "You won!", 0, 5, 0);
                     } else {
                         p.sendTitle("&cDefeat", "You lost!", 0, 5, 0);
@@ -73,7 +74,8 @@ public class Nexus {
             case BLUE:
                 plugin.getGameManager().getPlayersInGame().forEach(p -> {
                     if (p.getTeam().equals(TeamData.RED.getTeam())) {
-                        plugin.getGameManager().getMoney().put(p, plugin.getGameManager().getMoney().get(p) + getGold_reward());
+                        p.getUserData().setMoney(p.getUserData().getMoney() + getGold_reward());
+                        p.save();
                         p.sendTitle("&3Victory", "You won!", 0, 5, 0);
                     } else {
                         p.sendTitle("&cDefeat", "You lost!", 0, 5, 0);

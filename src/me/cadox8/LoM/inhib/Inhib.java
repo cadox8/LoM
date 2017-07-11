@@ -7,6 +7,7 @@ import me.cadox8.LoM.particles.ParticleEffect;
 import me.cadox8.LoM.task.InhibTask;
 import me.cadox8.LoM.utils.CuboidZone;
 import me.cadox8.LoM.utils.TeamData;
+import me.cadox8.LoM.utils.Utils;
 import org.bukkit.Location;
 
 public class Inhib {
@@ -59,18 +60,7 @@ public class Inhib {
             area.removeBlock(area.toArray().get(new Random().nextInt(area.toArray().size())));
         }*/
 
-        switch (getTeamData()){
-            case RED:
-                plugin.getGameManager().getPlayersInGame().forEach(p -> {
-                    if (p.getTeam().equals(TeamData.BLUE.getTeam())) plugin.getGameManager().getMoney().put(p, plugin.getGameManager().getMoney().get(p) + getGold_reward());
-                });
-                break;
-            case BLUE:
-                plugin.getGameManager().getPlayersInGame().forEach(p -> {
-                    if (p.getTeam().equals(TeamData.RED.getTeam())) plugin.getGameManager().getMoney().put(p, plugin.getGameManager().getMoney().get(p) + getGold_reward());
-                });
-                break;
-        }
+        Utils.giveMoney(getTeamData(), getGold_reward());
         regen();
     }
 
