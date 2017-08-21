@@ -40,9 +40,7 @@ public class Champion {
     public void giveItems(LoMPlayer player){}
 
 
-    public void damage(double damage){
-
-    }
+    public void damage(double damage){}
 
     public void back(LoMPlayer p){
         int count = 7;

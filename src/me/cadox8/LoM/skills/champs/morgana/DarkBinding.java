@@ -28,16 +28,17 @@ public class DarkBinding extends Skill {
             ParticleEffect.REDSTONE.display(new ParticleEffect.OrdinaryColor(102, 0, 102), Utils.add(x, particleLoc), plugin.getGameManager().playersInGame());
 
             if (getRange() == x) {
-                Location rangeLoc = l;
-                rangeLoc.getWorld().getNearbyEntities(Utils.add(x, rangeLoc), 0, 0, 0).forEach(e -> {
+                l.getWorld().getNearbyEntities(Utils.add(x, l), 0, 0, 0).forEach(e -> {
                     if (e instanceof Player) {
-                        Player target = (Player) e;
+                        LoMPlayer u = Utils.getPlayer((Player) e);
+                        if (u == null) return;
 
-                        if (plugin.getTeams().getTeam(target).equals(p.getTeam())) return;
+                        if (plugin.getTeams().getTeam(u.getPlayer()).equals(p.getTeam())) return;
 
-                        new LoMPlayer(target.getUniqueId()).paralize();
+                        u.paralize();
+                        u.damage(this);
 
-                        plugin.getServer().getScheduler().runTaskLater(plugin, () -> new LoMPlayer(target.getUniqueId()).paralize(), 0);
+                        plugin.getServer().getScheduler().runTaskLater(plugin, () -> u.paralize(), 0);
                     }
                 });
             }

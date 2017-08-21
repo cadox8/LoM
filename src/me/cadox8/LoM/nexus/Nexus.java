@@ -20,7 +20,6 @@ public class Nexus {
     @Getter @Setter private double health;
     @Getter @Setter private int gold_reward;
 
-    @Getter @Setter private boolean enabled;
     @Getter @Setter private boolean destroyed;
 
     public Nexus(Location location, TeamData teamData){
@@ -31,7 +30,6 @@ public class Nexus {
 
         setTeamData(teamData);
 
-        setEnabled(false);
         setDestroyed(false);
     }
 
@@ -44,7 +42,7 @@ public class Nexus {
     }
 
     public void regen(){
-        if (isDestroyed() || !isEnabled()) return;
+        if (isDestroyed()) return;
         if (getHealth() == 5500) return;
         if (getHealth() + 25 >= 5500) {
             setHealth(5500);
@@ -55,7 +53,6 @@ public class Nexus {
 
     public void destroy(){
         setDestroyed(true);
-        setEnabled(false);
 
         area.removeAll();
 
@@ -89,6 +86,5 @@ public class Nexus {
 
     public void loadAnimation(){
         ParticleEffect.REDSTONE.display(new ParticleEffect.OrdinaryColor(0, 50, 255), location, 50);
-        setEnabled(true);
     }
 }

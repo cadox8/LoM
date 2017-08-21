@@ -25,9 +25,12 @@ public enum TowerType { //Must be like this in config
     OUTER_BOT("outer_bot", 3500, 152, 40, 40, 0.83, 100);
 
     @Getter private String name;
+
     @Getter private int health;
+
     @Getter private int ad;
     @Getter private int armor;
+
     @Getter private int mr;
     @Getter private double attackSpeed;
     @Getter private int gold;

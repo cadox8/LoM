@@ -13,7 +13,7 @@ import me.cadox8.LoM.utils.Log;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class LoM extends JavaPlugin{
+public class LoM extends JavaPlugin {
 
     @Getter private static String prefix = ChatColor.GRAY + " || " + ChatColor.RED + "LoM" + ChatColor.GRAY + " || ";
 
@@ -33,7 +33,7 @@ public class LoM extends JavaPlugin{
         loadManagers();
         new LobbyTask(instance);
 
-        Log.log(Log.Logs.SUCCESS, "League Of Minecraft has been enabled");
+        Log.log(Log.Logs.SUCCESS, "League Of Minecraft has been enabled, v" + getDescription().getVersion());
     }
 
     public void onDisable(){

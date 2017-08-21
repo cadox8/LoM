@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import me.cadox8.LoM.LoM;
+import me.cadox8.LoM.champions.Champion;
+import me.cadox8.LoM.skills.Skill;
 import me.cadox8.LoM.utils.*;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -53,10 +55,18 @@ public class LoMPlayer {
     }
 
     public void save() {
+        plugin.getGameManager().quitPlayer(this);
         plugin.getLoMServer().remPlayer(this);
         plugin.getLoMServer().addPlayer(this);
+        plugin.getGameManager().addPlayer(this);
     }
 
+
+    public void damage(Skill skill) {
+        Champion c = plugin.getGameManager().getChampions().get(this);
+        c.getChampionStats().setHealth(c.getChampionStats().getHealth() - skill.getApDamage().get(skill.getLevel()));
+        plugin.getGameManager().getChampions().put(this, c);
+    }
 
     /**
     * Teams
@@ -80,6 +90,9 @@ public class LoMPlayer {
     }
     public Location getLoc() {
         return getPlayer().getLocation();
+    }
+    public String getName() {
+        return getPlayer().getName();
     }
 
 

@@ -23,6 +23,7 @@ public class Skill {
     @Getter @Setter private List<Double> manaCost;
     @Getter @Setter private List<Double> adDamage;
     @Getter @Setter private List<Double> apDamage;
+
     @Getter private double range;
     @Getter @Setter private double time;
     @Getter @Setter private double cooldown;

@@ -19,7 +19,6 @@ public class InhibTask extends BukkitRunnable {
         if (plugin.getState().getState() != State.States.GAME) return;
 
         inhib.setDestroyed(false);
-        inhib.setEnabled(true);
         inhib.loadAnimation();
     }
 }

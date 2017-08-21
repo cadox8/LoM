@@ -2,6 +2,7 @@ package me.cadox8.LoM.utils;
 
 import lombok.NonNull;
 import me.cadox8.LoM.LoM;
+import me.cadox8.LoM.api.LoMPlayer;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -150,5 +151,12 @@ public class Utils {
                 });
                 break;
         }
+    }
+
+    public static LoMPlayer getPlayer(Player p) {
+        for (LoMPlayer u : plugin.getGameManager().getPlayersInGame()) {
+            if (u.getName().equalsIgnoreCase(p.getName())) return u;
+        }
+        return null;
     }
 }

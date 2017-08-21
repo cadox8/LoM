@@ -31,7 +31,7 @@ public class Tower {
 
     @Getter @Setter private int range;
 
-    @Getter @Setter private boolean enabled;
+    @Getter @Setter private boolean enabled; //Some objects can disable towers for a while
     @Getter @Setter private boolean destroyed;
 
     public Tower(TowerType towerType, Location location, TeamData teamData){
@@ -45,7 +45,7 @@ public class Tower {
 
         setTeamData(teamData);
 
-        setEnabled(false);
+        setEnabled(true);
         setDestroyed(false);
         setRange(500);
     }
@@ -90,7 +90,6 @@ public class Tower {
 
     public void destroy(){
         setDestroyed(true);
-        setEnabled(false);
 
         for (int x = 0; x < area.toArray().size() / 5; x++){
             area.removeBlock(area.toArray().get(new Random().nextInt(area.toArray().size())));
@@ -100,6 +99,5 @@ public class Tower {
 
     public void loadAnimation(){
         ParticleEffect.REDSTONE.display(new ParticleEffect.OrdinaryColor(0, 50, 255), location, 50);
-        setEnabled(true);
     }
 }
