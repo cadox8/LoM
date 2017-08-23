@@ -1,8 +1,7 @@
-package me.cadox8.LoM.inhib;
+package me.cadox8.LoM.structures;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import me.cadox8.LoM.tower.TowerType;
 
 import java.util.Arrays;
 import java.util.List;

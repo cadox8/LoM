@@ -1,24 +1,24 @@
 package me.cadox8.LoM.task;
 
 import me.cadox8.LoM.LoM;
-import me.cadox8.LoM.inhib.Inhib;
 import me.cadox8.LoM.states.State;
+import me.cadox8.LoM.structures.Structure;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class InhibTask extends BukkitRunnable {
 
     private LoM plugin;
-    private Inhib inhib;
+    private Structure structure;
 
-    public InhibTask(LoM instance, Inhib inhib){
+    public InhibTask(LoM instance, Structure structure){
         this.plugin = instance;
-        this.inhib = inhib;
+        this.structure = structure;
     }
 
     public void run() {
         if (plugin.getState().getState() != State.States.GAME) return;
 
-        inhib.setDestroyed(false);
-        inhib.loadAnimation();
+        structure.setDestroyed(false);
+        structure.loadAnimation();
     }
 }

@@ -1,11 +1,9 @@
 package me.cadox8.LoM.managers;
 
-import me.cadox8.LoM.LoM;
-import me.cadox8.LoM.inhib.Inhib;
-import me.cadox8.LoM.nexus.Nexus;
-import me.cadox8.LoM.tower.Tower;
 import lombok.Getter;
-import me.cadox8.LoM.tower.TowerType;
+import me.cadox8.LoM.LoM;
+import me.cadox8.LoM.structures.Structure;
+import me.cadox8.LoM.structures.TowerType;
 import me.cadox8.LoM.utils.TeamData;
 import me.cadox8.LoM.utils.Utils;
 import org.bukkit.Location;
@@ -20,17 +18,13 @@ public class ArenaManager {
 
     private LoM plugin;
 
-    @Getter private ArrayList<Tower> towers;
-    @Getter private ArrayList<Inhib> inhibs;
-    @Getter private ArrayList<Nexus> nexus;
+    @Getter private ArrayList<Structure> structures;
     @Getter private HashMap<Team, Location> teamLocs;
 
     public ArenaManager(LoM Main){
         this.plugin = Main;
 
-        towers = new ArrayList<>();
-        inhibs = new ArrayList<>();
-        nexus = new ArrayList<>();
+        structures = new ArrayList<>();
         teamLocs = new HashMap<>(); //0 -> Red / 1 -> Blue
 
         initArena();
@@ -43,12 +37,16 @@ public class ArenaManager {
         //RED
         for (int x = 0; x < TowerType.values().length; x++){
             Location loc = Utils.stringToLocation(plugin.getFileUtils().getStringList("red", "towers").get(x));
-            towers.add(new Tower(TowerType.getList().get(x), loc, TeamData.RED));
+            Structure s = new Structure(Structure.StructureType.TOWER, loc, TeamData.RED);
+            s.setStructure(null, TowerType.getList().get(x), null);
+            structures.add(s);
         }
         //BLUE
         for (int x = 0; x < TowerType.values().length; x++){
             Location loc = Utils.stringToLocation(plugin.getFileUtils().getStringList("blue", "towers").get(x));
-            towers.add(new Tower(TowerType.getList().get(x), loc, TeamData.BLUE));
+            Structure s = new Structure(Structure.StructureType.TOWER, loc, TeamData.BLUE);
+            s.setStructure(null, TowerType.getList().get(x), null);
+            structures.add(s);
         }
     }
 }

@@ -2,6 +2,7 @@ package me.cadox8.LoM.task;
 
 import me.cadox8.LoM.LoM;
 import me.cadox8.LoM.states.State;
+import me.cadox8.LoM.structures.Structure;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class GameTask extends BukkitRunnable {
@@ -24,22 +25,11 @@ public class GameTask extends BukkitRunnable {
     public void run(){
         count++;
 
-        if (count % 5 == 0) plugin.getArenaManager().getNexus().forEach(n -> n.regen());
+        if (count % 5 == 0) plugin.getArenaManager().getStructures().stream().filter(n -> n.getStructureType() == Structure.StructureType.NEXUS).forEach(n -> n.regen());
 
         switch (count){
             case 1:
-                plugin.getArenaManager().getNexus().forEach(n -> {
-                    n.loadAnimation();
-                    n.setEnabled(true);
-                });
-                plugin.getArenaManager().getInhibs().forEach(i -> {
-                    i.loadAnimation();
-                    i.setEnabled(true);
-                });
-                plugin.getArenaManager().getTowers().forEach(t -> {
-                    t.loadAnimation();
-                    t.setEnabled(true);
-                });
+                plugin.getArenaManager().getStructures().forEach(n -> n.loadAnimation());
                 break;
             case minionsSpawn:
 

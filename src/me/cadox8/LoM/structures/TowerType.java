@@ -1,4 +1,4 @@
-package me.cadox8.LoM.tower;
+package me.cadox8.LoM.structures;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
