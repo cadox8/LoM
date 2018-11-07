@@ -35,14 +35,14 @@ public class LobbyTask extends BukkitRunnable{
             case 5:
                 plugin.getGameManager().getPlayersInGame().forEach(p -> {
                     p.getPlayer().teleport(plugin.getArenaManager().getTeamLocs().get(p.getTeam()));
-                    p.paralize();
+                    p.paralyze();
                 });
                 break;
 
             case 0:
                 plugin.getGameManager().getPlayersInGame().forEach(p -> {
                     plugin.getGameManager().getChampions().get(p).giveItems(p);
-                    p.paralize();
+                    p.paralyze();
                     Utils.broadcast("&2&lThe game has begun");
                     Utils.sound(Sound.ENTITY_GENERIC_EXPLODE);
                 });

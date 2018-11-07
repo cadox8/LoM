@@ -35,10 +35,10 @@ public class DarkBinding extends Skill {
 
                         if (plugin.getTeams().getTeam(u.getPlayer()).equals(p.getTeam())) return;
 
-                        u.paralize();
+                        u.paralyze();
                         u.damage(this);
 
-                        plugin.getServer().getScheduler().runTaskLater(plugin, () -> u.paralize(), 0);
+                        plugin.getServer().getScheduler().runTaskLater(plugin, () -> u.paralyze(), 0);
                     }
                 });
             }

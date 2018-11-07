@@ -41,7 +41,7 @@ public class LoMPlayer {
         getPlayer().sendMessage(LoM.getPrefix() + Utils.colorize(msg));
     }
 
-    public void paralize(){
+    public void paralyze(){
         if (getPlayer().getWalkSpeed() <= 0){
             getPlayer().setWalkSpeed(0.1f);
             return;

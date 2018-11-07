@@ -91,10 +91,12 @@ public class ItemMaker {
         ItemMeta meta = this.itemStack.getItemMeta();
         meta.addItemFlags(ItemFlag.values());
         this.itemStack.setItemMeta(meta);
+        setUnbreakable();
         return this;
     }
 
     public ItemStack build() {
+        noInfo();
         return this.itemStack;
     }
 }

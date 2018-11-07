@@ -40,8 +40,7 @@ public class Utils {
     public static Location stringToLocation(@NonNull String string) {
         if (string == null) return null;
         String[] s = string.split("%");
-        Location loc = new Location(plugin.getServer().getWorld(s[0]), Double.parseDouble(s[1]),
-                Double.parseDouble(s[2]), Double.parseDouble(s[3]), Float.parseFloat(s[4]), Float.parseFloat(s[5]));
+        Location loc = new Location(plugin.getServer().getWorld(s[0]), Double.parseDouble(s[1]), Double.parseDouble(s[2]), Double.parseDouble(s[3]), Float.parseFloat(s[4]), Float.parseFloat(s[5]));
         return loc;
     }
 

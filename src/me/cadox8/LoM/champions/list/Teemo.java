@@ -1,5 +1,6 @@
 package me.cadox8.LoM.champions.list;
 
+import me.cadox8.LoM.api.LoMPlayer;
 import me.cadox8.LoM.champions.Champion;
 import me.cadox8.LoM.champions.ChampionStats;
 import me.cadox8.LoM.skills.Skill;
@@ -25,5 +26,10 @@ public class Teemo extends Champion {
     @Override
     public List<Skill> championSkills(){
         return Arrays.asList(new GuerrillaWarfare());
+    }
+
+    @Override
+    public void giveItems(LoMPlayer player) {
+
     }
 }

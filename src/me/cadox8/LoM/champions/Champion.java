@@ -8,13 +8,12 @@ import me.cadox8.LoM.skills.Skill;
 import me.cadox8.LoM.task.BackTask;
 import me.cadox8.LoM.utils.Roles;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Champion {
+public abstract class Champion {
 
-    private LoM plugin = LoM.getInstance();
+    protected LoM plugin = LoM.getInstance();
 
     @Getter @Setter private int id;
     @Getter @Setter private String name;
@@ -31,16 +30,12 @@ public class Champion {
         this.name = name;
         this.description = description;
         this.roles = roles;
+
+        championStats = new ChampionStats();
     }
 
-    public List<Skill> championSkills(){
-        return new ArrayList<>();
-    }
-
-    public void giveItems(LoMPlayer player){}
-
-
-    public void damage(double damage){}
+    public abstract List<Skill> championSkills();
+    public abstract void giveItems(LoMPlayer player);
 
     public void back(LoMPlayer p){
         int count = 7;

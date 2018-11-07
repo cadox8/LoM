@@ -2,3 +2,4 @@ name: ${project.artifactId}
 main: me.cadox8.LoM.LoM
 version: ${project.version}
 author: cadox8
+api-version: 1.13
