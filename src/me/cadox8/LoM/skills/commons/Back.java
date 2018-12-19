@@ -8,7 +8,7 @@ import org.bukkit.Material;
 public class Back extends Skill {
 
     public Back(){
-        super("Back", new ItemMaker(Material.BED).setName("Back").build());
+        super("Back", new ItemMaker(Material.BLUE_BED).setName("Back").build());
 
         setLevel(1);
     }

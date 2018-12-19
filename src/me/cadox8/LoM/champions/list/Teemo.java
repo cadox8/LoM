@@ -16,11 +16,9 @@ public class Teemo extends Champion {
         super(1, "Teemo", "The Swift Scout", Arrays.asList(Roles.MAGE, Roles.SUPPORT));
 
         //Champion Stats
-        ChampionStats cs = new ChampionStats();
+        championStats = new ChampionStats();
 
-        cs.setMaxHealth(547.48);
-
-        setChampionStats(cs);
+        championStats.setMaxHealth(547.48);
     }
 
     @Override

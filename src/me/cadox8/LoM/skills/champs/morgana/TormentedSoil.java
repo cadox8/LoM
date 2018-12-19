@@ -13,7 +13,7 @@ import org.bukkit.entity.Player;
 public class TormentedSoil extends Skill {
 
     public TormentedSoil() {
-        super("Tormented Soil", new ItemMaker(Material.INK_SACK, 5).setName("Tormented Soil").build());
+        super("Tormented Soil", new ItemMaker(Material.INK_SAC, 5).setName("Tormented Soil").build());
 
         setAdDamage(toList(0));
         setApDamage(toList(8, 16, 24, 32, 40));

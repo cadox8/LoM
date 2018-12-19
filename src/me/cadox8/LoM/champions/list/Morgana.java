@@ -18,28 +18,26 @@ public class Morgana extends Champion {
         super(0, "Morgana", "Fallen Angel", Arrays.asList(Roles.MAGE, Roles.SUPPORT));
 
         //Champion Stats
-        ChampionStats cs = new ChampionStats();
+        championStats = new ChampionStats();
 
-        cs.setRange(450);
+        championStats.setRange(450);
 
-        cs.setMaxHealth(547.48);
-        cs.setHealth(cs.getMaxHealth());
-        cs.setHealthPerLevel(86);
-        cs.setHealthRegen(5.705);
-        cs.setHealthPerLevel(0.6);
+        championStats.setMaxHealth(547.48);
+        championStats.setHealth(championStats.getMaxHealth());
+        championStats.setHealthPerLevel(86);
+        championStats.setHealthRegen(5.705);
+        championStats.setHealthPerLevel(0.6);
 
-        cs.setArmor(25.384);
-        cs.setArmorPerLevel(3.8);
+        championStats.setArmor(25.384);
+        championStats.setArmorPerLevel(3.8);
 
-        cs.setMagicResistance(30);
-        cs.setMagicResistancePerLevel(0);
+        championStats.setMagicResistance(30);
+        championStats.setMagicResistancePerLevel(0);
 
-        cs.setAd(55.46);
-        cs.setAdPerLevel(3.5);
+        championStats.setAd(55.46);
+        championStats.setAdPerLevel(3.5);
 
-        cs.setSpeed(335);
-
-        setChampionStats(cs);
+        championStats.setSpeed(335);
     }
 
     @Override
